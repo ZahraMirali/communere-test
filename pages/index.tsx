@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { Fragment, useState, useCallback } from 'react';
 import { useQuery, useMutation } from 'react-query';
 import {
@@ -66,21 +65,13 @@ const Home: NextPage = () => {
       },
     });
   };
+  if (isLoading) return <CircularProgress />;
+  if (error) return <Alert severity='error'>Something went wrong!</Alert>;
 
   return (
     <Fragment>
-      <Head>
-        <title>Todo App</title>
-        <meta name='description' content='maintain your day-to-day tasks ' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
       <main>
-        {isLoading ? (
-          <CircularProgress />
-        ) : error ? (
-          <Alert severity='error'>Something went wrong!</Alert>
-        ) : data?.data.length === 0 ? (
+        {data?.data.length === 0 ? (
           <Box my={3} justifyContent='center' display='flex'>
             <Button variant='contained' onClick={toggleAddTodoOpen}>
               Create your first task :)
