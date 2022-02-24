@@ -25,3 +25,25 @@ export declare type TodoCardProps = {
   onDeleteClick: () => void;
   deleteLoading?: boolean;
 };
+
+export declare type TodoListContainerProps = {
+  onAddTodoClick: () => void;
+  onEditTodoClick: (todo: Todo) => void;
+  ref?: any;
+};
+
+export declare type AddTodoContainerProps = {
+  onClose: () => void;
+  open: boolean;
+  refetch?: () => void;
+};
+
+export declare type EditTodoContainerProps = {
+  onClose: () => void;
+  refetch?: () => void;
+  editingTodo?: Todo;
+};
+
+export declare type ListRef = {
+  refetch: () => void;
+};
