@@ -7,17 +7,10 @@ import {
   CardContent,
 } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
-import { Todo } from '../types/todo';
+import { TodoCardProps } from '../types/todo';
 import { priorities } from '../constants';
 
-type TodoProps = {
-  todo: Todo;
-  onEditClick: () => void;
-  onDeleteClick: () => void;
-  deleteLoading?: boolean;
-};
-
-export const TodoCard: FC<TodoProps> = ({
+export const TodoCard: FC<TodoCardProps> = ({
   todo,
   onDeleteClick,
   onEditClick,

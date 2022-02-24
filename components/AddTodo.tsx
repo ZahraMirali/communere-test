@@ -10,15 +10,8 @@ import {
 } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useForm } from 'react-hook-form';
-import { Todo } from '../types/todo';
+import { AddTodoProps, Todo } from '../types/todo';
 import { priorities } from '../constants';
-
-type AddTodoProps = {
-  open: boolean;
-  onClose: () => void;
-  handleAdd: (data: Todo) => void;
-  loading?: boolean;
-};
 
 export const AddTodo: FC<AddTodoProps> = ({
   open,
