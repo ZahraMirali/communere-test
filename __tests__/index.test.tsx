@@ -58,6 +58,7 @@ describe('Home', () => {
     fireEvent.click(screen.getAllByText('Delete Todo')[0]);
 
     await waitForElementToBeRemoved(() => screen.getByText('First Task'));
+    await waitForElementToBeRemoved(() => screen.getByRole('progressbar'));
 
     expect(screen.getAllByRole('article')).toHaveLength(3);
   });
