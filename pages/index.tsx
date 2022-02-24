@@ -1,8 +1,11 @@
 import type { NextPage } from 'next';
 import { Fragment, useRef } from 'react';
 import useTodoModals from '../hooks/useTodoModals';
-import { AddTodoContainer, TodoListContainer } from '../containers';
-import { EditTodoContainer } from '../containers/EditTodo';
+import {
+  AddTodoContainer,
+  TodoListContainer,
+  EditTodoContainer,
+} from '../containers';
 import { ListRef } from '../types/todo';
 
 const Home: NextPage = () => {
