@@ -34,7 +34,11 @@ self.addEventListener('activate', (evt) => {
 });
 
 self.addEventListener('fetch', (evt) => {
-  if (!evt.request.url.startsWith('http')) return;
+  if (
+    !evt.request.url.startsWith('http') ||
+    evt.request.url.startsWith('http://192.168.43.227:8081/api/v1/')
+  )
+    return;
 
   evt.respondWith(
     caches.match(evt.request).then((cacheRes) => {
