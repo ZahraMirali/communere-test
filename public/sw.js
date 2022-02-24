@@ -36,7 +36,7 @@ self.addEventListener('activate', (evt) => {
 self.addEventListener('fetch', (evt) => {
   if (
     !evt.request.url.startsWith('http') ||
-    evt.request.url.startsWith('http://192.168.43.227:8081/api/v1/')
+    evt.request.url.startsWith('https://todo-zhr.herokuapp.com/')
   )
     return;
 
